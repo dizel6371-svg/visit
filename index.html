@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Александр — Unity-разработчик</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">II<span class="logo__dot">.</span></a>
+      <nav class="tabs">
+        <button class="tab active" data-tab="about">Обо мне</button>
+        <button class="tab" data-tab="projects">Проекты</button>
+        <button class="tab" data-tab="contacts">Контакты</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="panel active" id="about">
+      <h1>Привет, я Александр</h1>
+      <p class="role">Unity-Middle-разработчик · React / TypeScript · Game Dev</p>
+      <p class="bio">
+        создаю качесвеннно и быстро игры на Unity  .
+        Люблю чистый код, продуманный UX и проекты, в которые хочется играть.
+      </p>
+    </section>
+
+    <section class="panel" id="projects">
+      <h2>Мои проекты</h2>
+      <p class="hint">Кликни по карточке — откроется окно с видео, скриншотами и деталями.</p>
+      <div class="projects" id="projectsGrid"></div>
+    </section>
+
+    <section class="panel" id="contacts">
+      <h2>Контакты</h2>
+      <div class="contacts">
+        <a href="mailto:ivan@example.com">✉️ ivan@example.com</a>
+        <a href="https://t.me/username" target="_blank">💬 @username</a>
+        <a href="https://github.com/username" target="_blank">🐙 github.com/username</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== МОДАЛКА ПРОЕКТА (Стиль Unity Asset Store) ===== -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+
+    <div class="modal__content" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close aria-label="Закрыть">✕</button>
+
+      <div class="project-layout">
+        
+        <!-- ЛЕВАЯ ЧАСТЬ: Медиа и миниатюры -->
+        <div class="project-main">
+          <h2 class="project-title" id="projectTitle"></h2>
+          
+          <!-- Большое окно (видео или фото) -->
+          <div class="main-viewer" id="mainViewer"></div>
+          
+          <!-- Галерея миниатюр снизу -->
+          <div class="thumbnail-strip" id="thumbnailStrip"></div>
+        </div>
+
+        <!-- ПРАВАЯ ЧАСТЬ: Описание и Кнопки -->
+        <div class="project-sidebar">
+          <p class="project-desc" id="projectDesc"></p>
+          <ul class="tags" id="projectTags"></ul>
+
+          <!-- Кнопки -->
+          <div class="action-buttons">
+            <!-- Синяя кнопка Играть -->
+            <a class="btn btn-play" id="btnPlay" target="_blank" rel="noopener">
+              🎮 Играть
+            </a>
+            <!-- Серая кнопка GitHub -->
+            <a class="btn btn-github" id="btnGithub" target="_blank" rel="noopener">
+              🐙 GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ЛАЙТБОКС (Фото на весь экран) ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" data-lightbox-close aria-label="Закрыть">✕</button>
+    <img id="lightboxImg" src="" alt="Скриншот на весь экран">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
