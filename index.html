@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Александр — Unity-разработчик</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo"><span class=""></span></a>
+      <nav class="tabs">
+        <button class="tab active" data-tab="about">Обо мне</button>
+        <button class="tab" data-tab="projects">Проекты</button>
+        <button class="tab" data-tab="contacts">Контакты</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel active" id="about">
+      <h1>Привет, я Александр</h1>
+      <p class="role">Unity-разработчик полного цикла · 4+ года в Game Dev · AI-native workflow</p>
+
+      <p class="bio">
+        Создаю игры от идеи до релиза: от 3D-моделей и анимаций до звука, UI и сборки под мобильные и PC-платформы.
+        За 4+ года в индустрии выпустил проекты в Google Play и Яндекс Играх, работал в командах и соло.
+        Также есть опыт преподавания Unity.
+      </p>
+
+      <p class="bio">
+        Мой подход — <strong>быстро доводить до результата</strong>. Я активно использую AI как инженерный инструмент:
+        для генерации 3D-моделей, аудио и UI-концептов, написания и рефакторинга кода, автоматизации рутины.
+        При этом архитектуру, качество и финальную сборку держу под контролем сам.
+      </p>
+
+      <h2>Что я закрываю в проекте</h2>
+      <ul class="skills">
+        <li><strong>3D:</strong> генерация и коррекция моделей с помощью AI (Tripo, Hunyuan3D), моделинг и риггинг в Blender, интеграция ассетов, оптимизация под платформу</li>
+        <li><strong>AI-пайплайн:</strong> ComfyUI для генерации референсов, концептов и звуков; AI-ассистенты для кода и рутины</li>
+        <li><strong>Код:</strong> Unity / C#, вайб-кодинг с AI (DeepSeek), интеграция SDK и плагинов</li>
+        <li><strong>UI/UX:</strong> вёрстка адаптивных интерфейсов, анимации, читаемость</li>
+        <li><strong>Аудио и VFX:</strong> AI-генерация и настройка звуков, эффектов и атмосферы</li>
+        <li><strong>Публикация:</strong> Google Play, Яндекс Игры, Boosty, itch.io — подготовка билдов под PC и мобилки</li>
+      </ul>
+
+      <p class="bio">
+        Могу заменить несколько позиций в проекте сразу — от модели и звука до финального билда.
+      </p>
+    </section>
+
+    <section class="panel" id="projects">
+      <h2>Мои проекты</h2>
+      <p class="hint">Кликните по карточке — откроется окно с видео, скриншотами и деталями.</p>
+      <p class="hint hint--warning">🎮 Чтобы поиграть в проекты на Яндекс Играх, нужна регистрация в Яндекс Паспорте.</p>
+      <div class="projects" id="projectsGrid"></div>
+    </section>
+
+       <section class="panel" id="contacts">
+      <h2>Контакты</h2>
+      <div class="contacts">
+        <a href="mailto:devsoul333@gmail.com">✉️ devsoul333@gmail.com</a>
+        <a href="https://t.me/Cockerrec" target="_blank" rel="noopener">💬 @Cockerrec</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== МОДАЛКА ПРОЕКТА ===== -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+
+    <div class="modal__content" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close aria-label="Закрыть">✕</button>
+
+      <div class="project-layout">
+
+        <div class="project-main">
+          <h2 class="project-title" id="projectTitle"></h2>
+          <div class="main-viewer" id="mainViewer"></div>
+          <div class="thumbnail-strip" id="thumbnailStrip"></div>
+        </div>
+
+        <div class="project-sidebar">
+          <p class="project-desc" id="projectDesc"></p>
+          <ul class="tags" id="projectTags"></ul>
+
+          <div class="action-buttons">
+            <a class="btn btn-play" id="btnPlay" target="_blank" rel="noopener">
+              🎮 Играть
+            </a>
+            <p class="play-note" id="playNote">
+              Для запуска нужна регистрация на Яндекс Играх
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ЛАЙТБОКС ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" data-lightbox-close aria-label="Закрыть">✕</button>
+    <img id="lightboxImg" src="" alt="Скриншот на весь экран">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
